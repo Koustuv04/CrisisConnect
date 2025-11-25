@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make a Donation | Disaster Management</title>
+
+  <style>
+    :root {
+      --primary-color: #e63946;
+      --secondary-color: #f1faee;
+      --accent-color: #a8dadc;
+      --dark-color: #1d3557;
+      --text-color: #2b2d42;
+      --light-bg: #f8f9fa;
+      --white: #ffffff;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: var(--dark-color);
+      color: var(--white);
+      text-align: center;
+      padding: 1.5rem 0;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 700px;
+      background: var(--white);
+      margin: 3rem auto;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .container h2 {
+      text-align: center;
+      color: var(--dark-color);
+      margin-bottom: 1rem;
+    }
+
+    p.intro {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: 600;
+      color: var(--dark-color);
+      margin-bottom: 0.3rem;
+    }
+
+    input, select, textarea {
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid var(--accent-color);
+      font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 5px rgba(230, 57, 70, 0.4);
+    }
+
+    .amount-options {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .amount-btn {
+      background-color: var(--accent-color);
+      color: var(--dark-color);
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .amount-btn:hover {
+      background-color: var(--primary-color);
+      color: var(--white);
+    }
+
+    .submit-btn {
+      background-color: var(--primary-color);
+      color: var(--white);
+      border: none;
+      padding: 0.9rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 1rem;
+    }
+
+    .submit-btn:hover {
+      background-color: #c82333;
+    }
+
+    .donation-summary {
+      background-color: var(--secondary-color);
+      padding: 1.2rem;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .donation-summary strong {
+      color: var(--dark-color);
+    }
+
+    footer {
+      text-align: center;
+      background-color: var(--dark-color);
+      color: var(--white);
+      padding: 1rem;
+      margin-top: 3rem;
+      box-shadow: var(--shadow);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Make a Donation</h1>
+  </header>
+
+  <div class="container">
+    <h2>Your Support Saves Lives</h2>
+    <p class="intro">
+      Every contribution helps us provide food, shelter, and medical assistance 
+      to those affected by disasters. Fill in your details below to make a difference.
+    </p>
+
+    <form>
+      <!-- Donor Information -->
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+
+      <!-- Donation Amount -->
+      <label>Choose Donation Amount</label>
+      <div class="amount-options">
+        <button type="button" class="amount-btn">₹500</button>
+        <button type="button" class="amount-btn">₹1000</button>
+        <button type="button" class="amount-btn">₹2500</button>
+        <button type="button" class="amount-btn">₹5000</button>
+      </div>
+
+      <label for="custom-amount">Or Enter Custom Amount (₹)</label>
+      <input type="number" id="custom-amount" name="custom-amount" placeholder="Enter amount" min="100">
+
+      <!-- Payment Method -->
+      <label for="method">Payment Method</label>
+      <select id="method" name="method" required>
+        <option value="">-- Select Payment Method --</option>
+        <option value="credit">Credit Card</option>
+        <option value="debit">Debit Card</option>
+        <option value="upi">UPI / Netbanking</option>
+        <option value="paypal">PayPal</option>
+      </select>
+
+      <!-- Message -->
+      <label for="message">Message / Dedication (Optional)</label>
+      <textarea id="message" name="message" rows="4" placeholder="Write a short note or dedication..."></textarea>
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn">Donate Now</button>
+    </form>
+
+    <div class="donation-summary">
+      <p>💖 Your donations have helped <strong>3,200+</strong> families rebuild their lives.</p>
+      <p>Every rupee counts — thank you for your support!</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Disaster Management Organization | Compassion in Action
+  </footer>
+
+</body>
+</html>
